@@ -1,0 +1,32 @@
+#title {
+    margin-top: 0;
+    text-align: center;
+    background-color: antiquewhite;
+    font-size: 400%;
+    border-bottom: 5px solid black;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+}
+
+.question{
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.question {
+    text-align: center;
+    display: inline-block;
+    font-size: 200%;
+    margin-top: 5%;
+}
+
+body {
+    margin-top: 0;
+}
+
+.hidden {
+    display: none;
+}

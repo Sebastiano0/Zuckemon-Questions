@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zuckemon Question</title>
+</head>
+<body>
+    <div><h1 id="title">DOMANDE</h1></div>
+    <!-- <div><button id="button" onclick="addQuestion()">Aggiungi domanda</button></div> -->
+    
+    
+    <div>
+        <label for="domanda">Domanda:</label>
+        <input type="text" id="domanda">
+    </div>
+
+    <div>
+        <input type="radio" id="aperta" name="tipo" checked onclick="showHideResponses()">
+        <label for="aperta">Aperta</label>
+        <input type="radio" id="chiusa" name="tipo" onclick="showHideResponses()">
+        <label for="chiusa">Chiusa</label>
+        <label for="punti">Punti:</label>
+            <select id="punti">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+
+    </div>
+
+    <div id="additionalFields" class="hidden">
+        <div>
+            <label for="risposta1">Risposta 1:</label>
+            <input type="text" id="risposta1">
+        </div>
+        <div>
+            <label for="risposta2">Risposta 2:</label>
+            <input type="text" id="risposta2">
+        </div>
+        <div>
+            <label for="risposta3">Risposta 3:</label>
+            <input type="text" id="risposta3">
+        </div>
+        <div>
+            <label for="risposta4">Risposta 4:</label>
+            <input type="text" id="risposta4">
+        </div>
+    </div>
+    <div>
+        <button onclick="addQuestion()">Aggiungi</button>
+    </div>
+
+
+</body>
+<script>
+     function showHideResponses() {
+            const chiusa = document.getElementById('chiusa');
+            const additionalFields = document.getElementById('additionalFields');
+            if (chiusa.checked) {
+                additionalFields.classList.remove('hidden');
+            } else {
+                additionalFields.classList.add('hidden');
+            }
+        }
+    function addQuestion() {
+        // #add a new form domanda
+
+    }
+
+    function generateJson(){//TODO: generate json file
+        // #add question to the list
+        const domanda = document.getElementById('domanda').value;
+        const aperta = document.getElementById('aperta').checked;
+        const chiusa = document.getElementById('chiusa').checked;
+        const punti = document.getElementById('punti').value;
+        const risposta1 = document.getElementById('risposta1').value;
+        const risposta2 = document.getElementById('risposta2').value;
+        const risposta3 = document.getElementById('risposta3').value;
+        const risposta4 = document.getElementById('risposta4').value;
+        const question = {
+            domanda: domanda,
+            aperta: aperta,
+            chiusa: chiusa,
+            punti: punti,
+            risposta1: risposta1,
+            risposta2: risposta2,
+            risposta3: risposta3,
+            risposta4: risposta4
+        }
+        console.log(question);
+
+        
+    }
+</script>
+</html>
