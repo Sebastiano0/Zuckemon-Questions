@@ -8,16 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zuckemon Question</title>
 </head>
-
-<body onload="addQuestionForm()">
-    <div>
+<header>
+    <div class="title">
         <h1 id="title">DOMANDE</h1>
     </div>
+</header>
+<body onload="addQuestionForm()" class="body">
     <!-- Form domanda iniziale -->
     <div class="question-container">
         <!-- Form domanda qui -->
     </div>
-    <button onclick="generateJson()">Save questions</button>
+    <button onclick="generateJson()">Salva domande</button>
     <a id="downloadAnchorElem" style="display:none"></a>
 </body>
 <script src="./main.js"></script>

@@ -96,9 +96,9 @@ function addQuestionForm() {
                 </div>
         
                 <div>
-        <input type="radio" id="aperta${questions.length}" name="tipo" checked onclick="showHideResponses()">
+        <input class="radio" type="radio" id="aperta${questions.length}" name="tipo" checked onclick="showHideResponses()">
         <label for="aperta">Aperta</label>
-        <input type="radio" id="chiusa${questions.length}" name="tipo" onclick="showHideResponses()">
+        <input class="radio" type="radio" id="chiusa${questions.length}" name="tipo" onclick="showHideResponses()">
         <label for="chiusa${questions.length}">Chiusa</label>
         <label for="punti${questions.length}">Punti:</label>
         <select id="punti${questions.length}">
@@ -118,22 +118,22 @@ function addQuestionForm() {
         <div>
             <label for="risposta1${questions.length}">Risposta 1:</label>
             <input type="text" id="risposta1${questions.length}">
-            <input type="radio" value"0" name="soluzione${questions.length}" class="single-checkbox" id="soluzione1${questions.length}">
+            <input class="radio" type="radio" value"0" name="soluzione${questions.length}" class="single-checkbox" id="soluzione1${questions.length}">
         </div>
         <div>
             <label for="risposta2${questions.length}">Risposta 2:</label>
             <input type="text" id="risposta2${questions.length}">
-            <input type="radio" value="1" name="soluzione${questions.length}" class="single-checkbox" id="soluzione2${questions.length}">
+            <input class="radio" type="radio" value="1" name="soluzione${questions.length}" class="single-checkbox" id="soluzione2${questions.length}">
         </div>
         <div>
             <label for="risposta3${questions.length}">Risposta 3:</label>
             <input type="text" id="risposta3${questions.length}">
-            <input type="radio" value="2" name="soluzione${questions.length}" class="single-checkbox" id="soluzione3${questions.length}">
+            <input class="radio" type="radio" value="2" name="soluzione${questions.length}" class="single-checkbox" id="soluzione3${questions.length}">
         </div>
         <div>
             <label for="risposta4${questions.length}">Risposta 4:</label>
             <input type="text" id="risposta4${questions.length}">
-            <input type="radio" value="3" name="soluzione${questions.length}" class="single-checkbox" id="soluzione4${questions.length}">
+            <input class="radio" type="radio" value="3" name="soluzione${questions.length}" class="single-checkbox" id="soluzione4${questions.length}">
         </div>
     </div>
                 <div>
