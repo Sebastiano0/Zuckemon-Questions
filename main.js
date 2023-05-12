@@ -94,6 +94,7 @@ function addQuestionForm() {
                     <label for="domanda">Domanda:</label>
                     <input type="text" id="domanda${questions.length}">
                 </div>
+                
         
                 <div>
         <input class="radio" type="radio" id="aperta${questions.length}" name="tipo" checked onclick="showHideResponses()">
@@ -113,7 +114,7 @@ function addQuestionForm() {
             <option>9</option>
             <option>10</option>
         </select>
-    </div>
+    
     <div id="additionalFields${questions.length}" class="hidden">
         <div>
             <label for="risposta1${questions.length}">Risposta 1:</label>
@@ -136,9 +137,7 @@ function addQuestionForm() {
             <input class="radio" type="radio" value="3" name="soluzione${questions.length}" class="single-checkbox" id="soluzione4${questions.length}">
         </div>
     </div>
-                <div>
-                    <button onclick="addQuestion(false)">Aggiungi</button>
-                </div>
+
 <script>
     $("input:checkbox").click(function(){
     if ($("input:checkbox:checked").length > 3){
@@ -147,13 +146,49 @@ function addQuestionForm() {
 });
 </script>`;
 
+const deleteButton = document.createElement('button');
+  deleteButton.textContent = 'Elimina';
+  deleteButton.addEventListener('click', () => {
+    newQuestionDiv.remove();
+    questions.splice(questions.length - 1, 1);
+  });
+  newQuestionDiv.appendChild(deleteButton);
+
     // Inserisci il nuovo div all'interno del contenitore desiderato
     const container = document.querySelector('body');
     container.appendChild(newQuestionDiv);
 
 }
 
-
+function deleteQuestion(questionIndex) {
+    questions.splice(questionIndex, 1);
+    const questionContainers = document.querySelectorAll('.question-container');
+    questionContainers[questionIndex].remove();
+    for (let i = questionIndex; i < questionContainers.length; i++) {
+      const question = questions[i];
+      const questionContainer = questionContainers[i];
+      const additionalFields = questionContainer.querySelector('#additionalFields' + i);
+      const domanda = questionContainer.querySelector('#domanda' + i);
+      const aperta = questionContainer.querySelector('#aperta' + i);
+      const chiusa = questionContainer.querySelector('#chiusa' + i);
+      const punti = questionContainer.querySelector('#punti' + i);
+      const risposta1 = questionContainer.querySelector('#risposta1' + i);
+      const risposta2 = questionContainer.querySelector('#risposta2' + i);
+      const risposta3 = questionContainer.querySelector('#risposta3' + i);
+      const risposta4 = questionContainer.querySelector('#risposta4' + i);
+      const soluzione = questionContainer.querySelector('input[name="soluzione' + i + '"]:checked');
+      domanda.id = 'domanda' + (i - 1);
+      aperta.id = 'aperta' + (i - 1);
+      chiusa.id = 'chiusa' + (i - 1);
+      punti.id = 'punti' + (i - 1);
+      risposta1.id = 'risposta1' + (i - 1);
+      risposta2.id = 'risposta2' + (i - 1);
+      risposta3.id = 'risposta3' + (i - 1);
+      risposta4.id = 'risposta4' + (i - 1);
+      soluzione.name = 'soluzione' + (i - 1);
+      additionalFields.id = 'additionalFields' + (i - 1);
+    }
+  }
 
 function generateJson() {//TODO: generate json file
     addQuestion(true);
