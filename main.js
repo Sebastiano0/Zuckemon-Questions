@@ -33,6 +33,9 @@ function addQuestion(finalQuestion) {
     for (var i = 0; i < solutions.length; i++) {
         if (solutions[i].checked) {
             soluzione = solutions[i].value;
+            if(soluzione == "on"){
+                soluzione = "1";
+            }
         }
     }
 
